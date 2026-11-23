@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-papel text-tinta antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md bg-tinta px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#25345a] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-sec {
+    @apply inline-flex items-center justify-center rounded-md border border-linea bg-white px-4 py-2.5 text-sm font-semibold text-tinta transition-colors hover:bg-papel disabled:opacity-50;
+  }
+  .btn-peligro {
+    @apply inline-flex items-center justify-center rounded-md border border-alerta bg-white px-4 py-2.5 text-sm font-semibold text-alerta transition-colors hover:bg-rose-50 disabled:opacity-50;
+  }
+  .campo {
+    @apply w-full rounded-md border border-linea bg-white px-3 py-2.5 text-sm;
+  }
+  .etiqueta {
+    @apply mb-1 block text-sm font-medium;
+  }
+  .panel {
+    @apply rounded-lg border border-linea bg-white;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #0e6b63;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
